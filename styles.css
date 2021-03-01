@@ -1,0 +1,86 @@
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:focus {
+  outline: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  color: rgba(40, 33, 56);
+  line-height: 1.5;
+  padding: 2rem;
+}
+
+form {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0.25rem 1.5rem 0.75rem rgba(173, 174, 179, 0.18);
+}
+
+label {
+  margin: 0.2rem 1rem 0 0;
+}
+
+button,
+input,
+textarea {
+  line-height: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  color: inherit;
+  background: inherit;
+  padding: 0.2rem 0.4rem;
+  border: 0;
+}
+
+input[list]::-webkit-calendar-picker-indicator,
+input[list]::-webkit-list-button {
+  display: none;
+}
+
+textarea {
+  width: 100%;
+  min-height: 8rem;
+  margin: 0.5rem 0;
+  resize: none;
+}
+
+button {
+  cursor: pointer;
+  color: #747480;
+}
+
+button:focus {
+  box-shadow: 0 0 0 2px highlight;
+}
+
+[type="submit"] {
+  cursor: pointer;
+  font-weight: 500;
+  line-height: 2;
+  padding: 0 0.6rem;
+  border-radius: 1rem;
+  background-color: #0f8287;
+  color: #fff;
+}
+
+.row {
+  display: flex;
+  border-bottom: 1px solid #eaeaea;
+  padding: 0.5rem;
+}
+
+.row input,
+.row textarea {
+  flex-grow: 1;
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>New Message</title>
+    <link href="styles.css" rel="stylesheet" />
+    <link href="dataListControl/dataList.css" rel="stylesheet" />
+  </head>
+  <body>
+    <form>
+      <div class="row">
+        <label for="to">To</label>
+        <input
+          type="email"
+          name="to"
+          id="to"
+          multiple
+          required
+          autofocus
+          onmousedown="displayDataList(this, 'contacts')"
+          onkeyup="handleKeyUp(this, 'contacts', contactsList)"
+        />
+        <button type="button" tabindex="-1" data-show-cc-fields>
+          Cc / Bcc
+        </button>
+      </div>
+      <template id="cc-fields">
+        <div class="row">
+          <label for="cc">Cc</label>
+          <input
+            type="email"
+            name="cc"
+            id="cc"
+            multiple
+            onmousedown="displayDataList(this, 'contacts')"
+            onkeyup="handleKeyUp(this, 'contacts', contactsList)"
+          />
+        </div>
+        <div class="row">
+          <label for="bcc">Bcc</label>
+          <input
+            type="email"
+            name="bcc"
+            id="bcc"
+            multiple
+            onmousedown="displayDataList(this, 'contacts')"
+            onkeyup="handleKeyUp(this, 'contacts', contactsList)"
+          />
+        </div>
+      </template>
+      <div class="row">
+        <label for="subject">Subject</label>
+        <input
+          type="text"
+          name="subject"
+          id="subject"
+          onmousedown="displayDataList(this, 'recent-subjects')"
+          onkeyup="handleKeyUp(this, 'recent-subjects', subjectsList)"
+        />
+      </div>
+      <textarea name="body" placeholder="Type your message here…"></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </body>
+  <script src="main.js"></script>
+  <script src="data/contacts-list.js"></script>
+  <script src="data/subjects-list.js"></script>
+  <!-- Datalist scripts-->
+  <script src="dataListControl/helpers.js"></script>
+  <script src="dataListControl/control.js"></script>
+  <script src="dataListControl/dataList.js"></script>
+  <script src="dataListControl/dataListOptions.js"></script>
+  <script src="dataListControl/eventHandlers.js"></script>
+  <script>
+    document.addEventListener(
+      "DOMContentLoaded",
+      function() {
+        datalistElement("contacts", contactsList);
+        datalistElement("recent-subjects", subjectsList);
+        loadDataList("contacts", contactsList);
+        loadDataList("recent-subjects", subjectsList);
+      },
+      { once: true }
+    );
+  </script>
+</html>

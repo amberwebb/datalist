@@ -1,0 +1,32 @@
+datalist {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  height: auto;
+  max-height: 85%;
+  overflow-y: scroll;
+  font-size: 1rem;
+}
+
+.list-items {
+  padding: 10px;
+  font-size: 13px;
+}
+
+.list-items:hover {
+  cursor: pointer;
+  background: #0f8287;
+  color: white;
+}
+
+.active-item {
+  background: #0f8287;
+  color: white;
+}
+
+.option-value {
+  font-weight: bold;
+}
