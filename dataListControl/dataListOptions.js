@@ -19,15 +19,15 @@ function selectOption(optionEl) {
       inputEl.value = inputEl.value += selectedValue;
     } else {
       const valueArray = inputEl.value.split(",");
-      const test = [
+      const filteredValues = [
         ...valueArray.filter((item, index) => index !== valueArray.length - 1),
         selectedValue
       ];
 
-      if (test.length === 1) {
-        inputEl.value = test[0];
+      if (filteredValues.length === 1) {
+        inputEl.value = filteredValues[0];
       } else {
-        inputEl.value = test.join(",");
+        inputEl.value = filteredValues.join(",");
       }
     }
   }
